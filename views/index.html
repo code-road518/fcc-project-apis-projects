@@ -11,19 +11,60 @@
 </head>
 
 <body>
-    <h1>Timestamp Microservice</h1>
-    <hr />
     <div class="container">
-        <h2>Example Usage:</h2>
-        <ul>
-            <li><a href="api/2024-10-5">[project url]/api/2024-10-5</a></li>
-            <li><a href="api/1728057600000">[project url]/api/1728057600000</a></li>
-        </ul>
+        <section>
+            <h1>Timestamp Microservice</h1>
+            <hr />
+            <h2>Example Usage:</h2>
+            <ul>
+                <li><a href="api/2024-10-5">[project url]/api/2024-10-5</a></li>
+                <li><a href="api/1728057600000">[project url]/api/1728057600000</a></li>
+            </ul>
 
-        <h2>Example Output:</h2>
-        <p>
-            <code>{"unix":1728057600000, "utc":"Fri, 04 Oct 2024 16:00:00 GMT"}</code>
-        </p>
+            <h2>Example Output:</h2>
+            <p>
+                <code>{"unix":1728057600000, "utc":"Fri, 04 Oct 2024 16:00:00 GMT"}</code>
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h1>Headerparser Microservice</h1>
+            <hr>
+            <ul>
+                <li><a href="api/whoami">[project url]/api/whoami</a></li>
+            </ul>
+
+            <h2>Example Output:</h2>
+            <p>
+                <code>
+                    {
+                        "ipaddress": "::ffff:127.0.0.1",
+                        "language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+                        "software": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0"
+                    }
+                </code>
+            </p>
+        </section>
+
+        <section>
+            <h1>url-shortener-microservice </h1>
+            <hr>
+            <form action="api/shorturl" method="POST">
+                <fieldset>
+                    <legend>URL Shortener</legend>
+                    <label for="url_input">URL:</label>
+                    <input id="url_input" type="text" name="url" placeholder="https://www.freecodecamp.org/" />
+                    <input type="submit" value="POST URL" />
+                </fieldset>
+            </form>
+            <h2>Example Usage:</h2>
+            <a href="/api/shorturl/1000">
+                [this_project_url]/api/shorturl/1000
+            </a>
+
+            <h3>Will Redirect to:</h3>
+            <p>https://forum.freecodecamp.org/</p>
+        </section>
     </div>
 
 </body>

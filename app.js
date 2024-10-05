@@ -3,10 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+const dns = require('node:dns')
 var app = express();
 
 // view engine setup
@@ -36,6 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', indexRouter);
@@ -45,12 +45,14 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+// app.use('/users', usersRouter);
 
 // your first API endpoint... 
 app.get("/api/hello", function (req, res) {
   res.json({ greeting: 'hello API' });
 });
 
+// header parse
 app.use('/api/whoami', function (req, res) {
   res.json({
     ipaddress: req.connection.remoteAddress,
@@ -59,8 +61,38 @@ app.use('/api/whoami', function (req, res) {
   })
 })
 
-// app.use('/users', usersRouter);
+// url-shortener-microservice
+let num = 1000
+const shorturlObj = {
+  1000: 'https://forum.freecodecamp.org/'
+}
+app.post('/api/shorturl', function (req, res) {
+  // console.log('post url ----', req.body)
+  const { url } = req.body
+  console.log('url--', url)
+  const rr = new URL(url)
+  dns.lookup(rr.hostname, function (err, address) {
+    console.log('eeer---', err)
+    if (err) {
+      res.json({ error: 'invalid url' })
+    } else {
+      res.json({ original_url: url, short_url: ++num })
+      shorturlObj[num] = url
+    }
+  })
 
+}).get('/api/shorturl/:shortId?', function (req, res) {
+  const { shortId } = req.params
+  if (shorturlObj[shortId]) {
+    res.redirect(shorturlObj[shortId])
+  } else {
+    res.json({
+      "error": "No short URL found for the given input"
+    })
+  }
+})
+
+// Timestamp server
 app.use('/api/:date?', function (req, res) {
 
   if (req.params.date === undefined) {
