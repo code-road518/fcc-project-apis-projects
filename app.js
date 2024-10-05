@@ -51,6 +51,13 @@ app.get("/api/hello", function (req, res) {
   res.json({ greeting: 'hello API' });
 });
 
+app.use('/api/whoami', function (req, res) {
+  res.json({
+    ipaddress: req.connection.remoteAddress,
+    language: req.headers['accept-language'],
+    software: req.headers['user-agent'],
+  })
+})
 
 // app.use('/users', usersRouter);
 
@@ -80,6 +87,8 @@ app.use('/api/:date?', function (req, res) {
     res.json({ unix, utc })
   }
 })
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
