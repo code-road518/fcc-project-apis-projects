@@ -8,6 +8,10 @@ var usersRouter = require('./routes/users');
 const dns = require('node:dns')
 var app = express();
 
+
+const multer = require('multer')
+const upload = multer({ dest: './uploads/' })
+
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
@@ -43,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
+  // res.send('hahahh')
   res.sendFile(__dirname + '/views/index.html');
 });
 
@@ -55,12 +60,24 @@ app.get("/api/hello", function (req, res) {
 });
 
 // header parse
-app.use('/api/whoami', function (req, res) {
+app.get('/api/whoami', function (req, res) {
   res.json({
     ipaddress: req.connection.remoteAddress,
     language: req.headers['accept-language'],
     software: req.headers['user-agent'],
   })
+})
+
+// file-metadata-microservice
+app.route('/api/fileanalyse').post(upload.single('upfile'), function (req, res) {
+  const file = req.file
+  console.log('posttt fifif--', file)
+  //   {
+  //     "name": "npm.png",
+  //     "type": "image/png",
+  //     "size": 506
+  // }
+  res.json({ name: file.originalname, type: file.mimetype, size: file.size })
 })
 
 // url-shortener-microservice
@@ -95,7 +112,7 @@ app.post('/api/shorturl', function (req, res) {
 })
 
 // Timestamp server
-app.use('/api/:date?', function (req, res) {
+app.get('/api/:date?', function (req, res) {
 
   if (req.params.date === undefined) {
     const date = new Date()
@@ -132,12 +149,12 @@ app.use(function (req, res, next) {
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  // res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
   // res.render('error');
-  res.send(JSON.stringify(err))
+  res.send(err)
 });
 
 module.exports = app;

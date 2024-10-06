@@ -22,10 +22,10 @@ const Log = mongoose.model('logs', LogSchema)
 
 User.updateOne({ username: 'fcc_test' }, {}, { upsert: true })
   .then((data) => {
-    console.log('ahahha--success', data)
+    // console.log('ahahha--success', data)
 
   }).catch(err => {
-    console.log('ahahha--err0r', err)
+    // console.log('ahahha--err0r', err)
   })
 /* GET users listing. */
 router.route('/').get(function (req, res) {
@@ -47,7 +47,7 @@ router.route('/').get(function (req, res) {
 
 // add exercise
 router.post('/:_id/exercises', async function (req, res) {
-  console.log('add exercise----', req.body)
+  // console.log('add exercise----', req.body)
   let { description, duration, date } = req.body
   let _id = req.params['_id']
   duration = Number(duration);

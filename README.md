@@ -14,3 +14,6 @@
 
 ## 运动追踪器
 - exercise-tracker
+
+## 文件元数据微服务
+- file-metadata-microservice
