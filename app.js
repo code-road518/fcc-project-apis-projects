@@ -12,6 +12,7 @@ var app = express();
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
 
+
 const enableCORS = function (req, res, next) {
   if (!process.env.DISABLE_XORIGIN) {
     const allowedOrigins = ["https://www.freecodecamp.org"];
@@ -45,7 +46,8 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-// app.use('/users', usersRouter);
+// exercise-tracker
+app.use('/api/users', usersRouter);
 
 // your first API endpoint... 
 app.get("/api/hello", function (req, res) {
@@ -121,7 +123,6 @@ app.use('/api/:date?', function (req, res) {
 })
 
 
-
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -131,12 +132,12 @@ app.use(function (req, res, next) {
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
   // res.render('error');
-  res.json(err)
+  res.send(JSON.stringify(err))
 });
 
 module.exports = app;
