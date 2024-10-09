@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visualize-data-with-a-bar-chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <style>
+        #title {
+            text-align: center;
+        }
+
+        #container {}
+
+        .bar {}
+
+        #tooltip {
+            opacity: 0;
+            position: absolute;
+            bottom: 100px;
+            border: 1px solid #f14;
+            width: 100px;
+            height: 50px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.4);
+            transition: all 0.1s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <div id="container">
+            <div id="tooltip">tooltip</div>
+            <h1 id="title">United States GDP</h1>
+        </div>
+    </main>
+
+    <script src="./javascripts/visualize-data-with-a-bar-chart.js"></script>
+
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+</body>
+
+</html>
