@@ -1,6 +1,6 @@
 
 const getData = async () => {
-    const result = await fetch('/data/cyclist-data.json')
+    const result = await fetch('./data/cyclist-data.json')
 
     return await result.json()
 }
