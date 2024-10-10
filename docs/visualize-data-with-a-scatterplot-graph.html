@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visualize-data-with-a-scatterplot-graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+
+    <style>
+        #container {
+            position: relative;
+        }
+
+        #tooltip {
+            opacity: 0;
+            position: absolute;
+            border: 1px solid #f13;
+            transition: all 0.1s;
+            z-index: -1;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="container">
+            <div id="tooltip"></div>
+            <div>
+                <h1 id="title">Doping in Professional Bicycle Racing</h1>
+                <p>35 Fastest times up Alpe d'Huez</p>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./javascripts/visualize-data-with-a-scatterplot-graph.js"></script>
+
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>

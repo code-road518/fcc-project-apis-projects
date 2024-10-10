@@ -17,3 +17,11 @@
 
 ## 文件元数据微服务
 - file-metadata-microservice
+
+## visualize-data-with-a-bar-chart
+
+[visualize-data-with-a-bar-chart](https://code-road518.github.io/fcc-project-apis-projects/visualize-data-with-a-bar-chart.html)
+
+## visualize-data-with-a-scatterplot-graph
+
+[visualize-data-with-a-scatterplot-graph](https://code-road518.github.io/fcc-project-apis-projects/visualize-data-with-a-scatterplot-graph.html)

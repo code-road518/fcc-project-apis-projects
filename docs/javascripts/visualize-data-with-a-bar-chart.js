@@ -44,9 +44,8 @@ const addSvg = async () => {
         .attr('height', d => height - margin.bottom - yScale(d[1]))
         .on('mouseover', event => {
             const target = event.currentTarget
-
             target.setAttribute('opacity', 0.5)
-            const [x, y] = d3.pointer(event, target)
+            const [x, y] = d3.pointer(event, svg)
 
             tooltip.style.opacity = 1
             tooltip.style.left = x + 30 + 'px'

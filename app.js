@@ -46,10 +46,10 @@ app.use(express.static(path.join(__dirname, 'docs')));
 // app.use('/', indexRouter);
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (req, res) {
-  // res.send('hahahh')
-  res.sendFile(__dirname + '/views/index.html');
-});
+// app.get("/", function (req, res) {
+//   // res.send('hahahh')
+//   res.sendFile(__dirname + '/views/index.html');
+// });
 
 // exercise-tracker
 app.use('/api/users', usersRouter);
