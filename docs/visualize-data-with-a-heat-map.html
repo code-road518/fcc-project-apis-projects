@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visualize-data-with-a-heat-map</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+
+    <style>
+        #container {
+            position: relative;
+        }
+
+        #tooltip {
+            display: none;
+            position: absolute;
+            border: 1px solid #567;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main id="container">
+        <div id="tooltip"></div>
+
+    </main>
+
+
+    <script src="./javascripts/visualize-data-with-a-heat-map.js"></script>
+
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+</body>
+
+</html>

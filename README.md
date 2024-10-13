@@ -25,3 +25,8 @@
 ## visualize-data-with-a-scatterplot-graph
 
 [visualize-data-with-a-scatterplot-graph](https://code-road518.github.io/fcc-project-apis-projects/visualize-data-with-a-scatterplot-graph.html)
+
+
+## visualize-data-with-a-heat-map
+
+[visualize-data-with-a-heat-map](https://code-road518.github.io/fcc-project-apis-projects/visualize-data-with-a-heat-map.html)
