@@ -30,3 +30,8 @@
 ## visualize-data-with-a-heat-map
 
 [visualize-data-with-a-heat-map](https://code-road518.github.io/fcc-project-apis-projects/visualize-data-with-a-heat-map.html)
+
+
+## visualize-data-with-a-choropleth-map
+
+[visualize-data-with-a-choropleth-map](https://code-road518.github.io/fcc-project-apis-projects/visualize-data-with-a-choropleth-map.html)
