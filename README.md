@@ -35,3 +35,8 @@
 ## visualize-data-with-a-choropleth-map
 
 [visualize-data-with-a-choropleth-map](https://code-road518.github.io/fcc-project-apis-projects/visualize-data-with-a-choropleth-map.html)
+
+
+## visualize-data-with-a-treemap-diagram
+
+[visualize-data-with-a-treemap-diagram](https://code-road518.github.io/fcc-project-apis-projects/visualize-data-with-a-treemap-diagram.html)
